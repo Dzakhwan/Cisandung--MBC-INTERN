@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
+    public float jumpForce = 5f;
+    public bool IsGrounded = false;
     private Vector2 moveInput;
     private Rigidbody rb;
 
@@ -17,10 +19,28 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = value.Get<Vector2>();
     }
-
-    void Update()
+    public void OnJump()
+    {
+        Jump();
+        Debug.Log("Jump");
+    }
+    public void Walk()
     {
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
         rb.MovePosition(rb.position + moveDirection * moveSpeed * Time.deltaTime);
+    }
+    public void Jump()
+    {
+        if (IsGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            IsGrounded = false; // Set false agar tidak lompat terus
+        }
+    }
+
+    void Update()
+    {
+        Walk();
+        
     }
 }
