@@ -9,11 +9,13 @@ public class PlayerController : MonoBehaviour
     public bool IsGrounded = false;
     private Vector2 moveInput;
     private Rigidbody rb;
+    private Animator anim;
     private float currentSpeed;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
         currentSpeed = moveSpeed;
     }
 
@@ -33,10 +35,13 @@ public class PlayerController : MonoBehaviour
         if (value.isPressed)
         {
             currentSpeed = sprintSpeed;
+            anim.SetBool("IsRunning",true);
             Debug.Log("Sprint");
         }
         else
         {
+            anim.SetBool("IsRunning",false);
+            Debug.Log("Stop Sprint");
             currentSpeed = moveSpeed;
         }
     }
@@ -55,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             IsGrounded = false;
+            anim.SetTrigger("Jumping");
         }
     }
 
