@@ -53,6 +53,14 @@ public class PlayerController : MonoBehaviour
             IsGrounded = true;
         }
     }
+    void OnCollisionExit(Collision collision)
+{
+    
+    if (collision.gameObject.CompareTag("Ground"))
+    {
+        IsGrounded = false;
+    }
+}
 
     public void Jump()
     {
@@ -68,5 +76,15 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
         rb.MovePosition(rb.position + moveDirection * currentSpeed * Time.fixedDeltaTime);
+        if (moveDirection != Vector3.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(moveDirection, Vector3.up);
+            rb.rotation = Quaternion.RotateTowards(rb.rotation, toRotation, 720 * Time.fixedDeltaTime);
+            anim.SetBool("IsWalking", true);
+        }
+        else
+        {
+            anim.SetBool("IsWalking", false);
+        }
     }
 }
