@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private Animator anim;
     private float currentSpeed;
+    private IInteractable interactableInRange;
 
     private void Awake()
     {
@@ -54,11 +55,37 @@ public class PlayerController : MonoBehaviour
         }
     }
     void OnCollisionExit(Collision collision)
-{
-    
-    if (collision.gameObject.CompareTag("Ground"))
     {
-        IsGrounded = false;
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            IsGrounded = false;
+        }
+    }
+
+
+private void OnTriggerEnter(Collider other)
+{
+    if (other.TryGetComponent<IInteractable>(out var interactable))
+    {
+        interactableInRange = interactable;
+    }
+}
+
+private void OnTriggerExit(Collider other)
+{
+    if (other.TryGetComponent<IInteractable>(out var interactable) && interactable == interactableInRange)
+    {
+        interactableInRange = null;
+    }
+}
+
+public void OnInteract()
+{
+    Debug.Log("OnInteract called");
+    if (interactableInRange != null)
+    {
+        interactableInRange.OnInteract();
     }
 }
 
