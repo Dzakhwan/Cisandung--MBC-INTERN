@@ -9,8 +9,7 @@ public class MainMenuLogic : MonoBehaviour
     private GameObject optionsMenu;
     private GameObject creditsMenu;
     private GameObject loading;
-    public GameObject controls;
-    public GameObject graphics;
+
     public GameObject Audio;
     public AudioSource buttonSound;
 
@@ -30,8 +29,6 @@ public class MainMenuLogic : MonoBehaviour
         loading.GetComponent<Canvas>().enabled = false;
 
         // Disable controls, graphics, and audio game objects
-        controls.SetActive(false);
-        graphics.SetActive(false);
         Audio.SetActive(false);
     }
 
@@ -52,8 +49,6 @@ public class MainMenuLogic : MonoBehaviour
         buttonSound.Play();
         mainMenu.GetComponent<Canvas>().enabled = false;
         optionsMenu.GetComponent<Canvas>().enabled = true;
-        controls.SetActive(false);
-        graphics.SetActive(false);
         Audio.SetActive(true);
     }
 
