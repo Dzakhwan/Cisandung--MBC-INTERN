@@ -3,12 +3,24 @@ using UnityEngine;
 public class RuneInteraction : MonoBehaviour, IInteractable
 {
     private bool playerInRange = false;
+    public string interactionPrompt = "Press 'E' to collect the rune";
+    public GateController gateController; 
 
     public void OnInteract()
     {
         Debug.Log("Interacted with the rune.");
-        // Tambahkan logika memasukkan ke inventory di sini
-        Destroy(gameObject); // Contoh: rune diambil
+        if (gateController != null)
+        {
+            gateController.AddRune();
+        }
+        else
+        {
+            Debug.LogWarning("GateController reference is missing!");
+        }
+
+        
+
+        Destroy(gameObject); 
     }
 
     public void OnInteractExit()
@@ -21,6 +33,7 @@ public class RuneInteraction : MonoBehaviour, IInteractable
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            Debug.Log(interactionPrompt);
         }
     }
 
@@ -29,6 +42,7 @@ public class RuneInteraction : MonoBehaviour, IInteractable
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
+
         }
     }
 
