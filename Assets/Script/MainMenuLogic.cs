@@ -11,9 +11,14 @@ public class MainMenuLogic : MonoBehaviour
     private GameObject loading;
 
     public GameObject Audio;
-    public AudioSource buttonSound;
+    AudioManager audioManager;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     void Start()
     {
         // Find references to canvas objects
@@ -38,7 +43,7 @@ public class MainMenuLogic : MonoBehaviour
         // Enable loading canvas, disable main menu, play button sound, and load starting scene
         loading.GetComponent<Canvas>().enabled = true;
         mainMenu.GetComponent<Canvas>().enabled = false;
-        buttonSound.Play();
+        audioManager.PlaySFX(audioManager.buttonClick);
         SceneManager.LoadScene("mainScene");
     }
 
@@ -46,9 +51,10 @@ public class MainMenuLogic : MonoBehaviour
     public void OptionsButton()
     {
         // Play button sound, disable main menu, enable options menu, and show audio settings
-        buttonSound.Play();
+        
         mainMenu.GetComponent<Canvas>().enabled = false;
         optionsMenu.GetComponent<Canvas>().enabled = true;
+        audioManager.PlaySFX(audioManager.buttonClick);
         Audio.SetActive(true);
     }
 
@@ -58,7 +64,7 @@ public class MainMenuLogic : MonoBehaviour
     public void CreditsButton()
     {
         // Play button sound, disable main menu, and enable credits menu
-        buttonSound.Play();
+        audioManager.PlaySFX(audioManager.buttonClick);
         mainMenu.GetComponent<Canvas>().enabled = false;
         creditsMenu.GetComponent<Canvas>().enabled = true;
     }
@@ -67,7 +73,7 @@ public class MainMenuLogic : MonoBehaviour
     public void ExitGameButton()
     {
         // Play button sound, quit application, and log message
-        buttonSound.Play();
+        audioManager.PlaySFX(audioManager.buttonClick);
         Application.Quit();
         Debug.Log("App Has Exited");
     }
@@ -76,10 +82,11 @@ public class MainMenuLogic : MonoBehaviour
     public void ReturnToMainMenuButton()
     {
         // Play button sound, enable main menu, disable options and credits menu
-        buttonSound.Play();
+
         mainMenu.GetComponent<Canvas>().enabled = true;
         optionsMenu.GetComponent<Canvas>().enabled = false;
         creditsMenu.GetComponent<Canvas>().enabled = false;
+        audioManager.PlaySFX(audioManager.buttonClick);
     }
 
     // Update is called once per frame
