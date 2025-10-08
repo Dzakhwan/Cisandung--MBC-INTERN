@@ -13,8 +13,6 @@ public class MainMenuLogic : MonoBehaviour
     public GameObject Audio;
     AudioManager audioManager;
 
-    // Start is called before the first frame update
-
     private void Awake()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
