@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed = 10f;
     public float jumpForce = 5f;
     public bool IsGrounded = false;
+    private AudioManager audioManager;
     private Vector2 moveInput;
     private Rigidbody rb;
     private Animator anim;
@@ -18,6 +19,11 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         currentSpeed = moveSpeed;
+        GameObject audioObject = GameObject.FindGameObjectWithTag("Audio");
+        if (audioObject != null)
+        {
+            audioManager = audioObject.GetComponent<AudioManager>();
+        }
     }
 
     public void OnMove(InputValue value)
@@ -52,6 +58,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             IsGrounded = true;
+        }
+        if (audioManager != null)
+        {
+            audioManager.PlayLandSound();
         }
     }
     void OnCollisionExit(Collision collision)
@@ -96,6 +106,14 @@ public void OnInteract()
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             IsGrounded = false;
             anim.SetTrigger("Jumping");
+        }
+    }
+
+    public void PlayFootstep()
+    {
+        if (audioManager != null )
+        {
+            audioManager.PlayFootstep();
         }
     }
 
