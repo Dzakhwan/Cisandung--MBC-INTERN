@@ -5,22 +5,42 @@ public class EnemyController : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform player;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Animator anim;
+    public float chaseDistance = 10f;
+
+    private bool isChasing = false;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-       
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (agent != null && agent.isOnNavMesh && player!= null)
+        if (agent != null && agent.isOnNavMesh && player != null)
         {
-            agent.SetDestination(player.position);
+            float distance = Vector3.Distance(transform.position, player.position);
+
+            if (distance <= chaseDistance)
+            {
+                agent.SetDestination(player.position);
+                if (!isChasing)
+                {
+                    anim.SetBool("IsRunning", true);
+                    isChasing = true;
+                }
+            }
+            else
+            {
+                agent.ResetPath();
+                if (isChasing)
+                {
+                    anim.SetBool("IsRunning", false);
+                    isChasing = false;
+                }
+            }
         }
-        
     }
 }
