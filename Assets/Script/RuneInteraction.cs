@@ -9,7 +9,7 @@ public class RuneInteraction : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         Debug.Log("Interacted with the rune.");
-        if (gateController != null)
+        if (gateController != null && gameObject.activeInHierarchy)
         {
             gateController.AddRune();
         }
