@@ -29,6 +29,7 @@ public class EnemyController : MonoBehaviour
                 if (!isChasing)
                 {
                     anim.SetBool("IsRunning", true);
+                    Debug.Log("Chasing player");
                     isChasing = true;
                 }
             }
