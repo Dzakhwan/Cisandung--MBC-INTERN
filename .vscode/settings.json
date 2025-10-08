@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Cisandung--MBC-INTERN.sln"
+    "dotnet.defaultSolution": "Cisandung (MBC Intern).sln"
 }
