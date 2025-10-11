@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3254121244090989105}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.1416786, y: 0.000000014735395, z: -0.0000000022164859, w: 0.98991275}
-  m_LocalPosition: {x: 0, y: 2.9284945, z: -10.0211735}
+  m_LocalRotation: {x: 0.14831677, y: -0.01081405, z: 0.0017010103, w: 0.9888794}
+  m_LocalPosition: {x: 0.24000168, y: 3.3716257, z: -10.984363}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -95,7 +95,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 3, z: -10}
+  FollowOffset: {x: 0.24, y: 3.45, z: -10.96}
 --- !u!114 &893145223891355164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 1381546542846562033}
   - component: {fileID: 5951591132978309248}
   - component: {fileID: 3728289852974867742}
+  - component: {fileID: 8472506841171622517}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -156,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7824425266845752695}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0035714784, y: -0, z: -0, w: 0.9999936}
+  m_LocalRotation: {x: 0.0035692314, y: 0, z: 0, w: 0.9999936}
   m_LocalPosition: {x: 115.11, y: 1.176, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -324,6 +325,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39efb3fcab3b2e5478411c2aeed33547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8472506841171622517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7824425266845752695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 551a97390f6082049a95da5ce48c653a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &5550361621548380577
