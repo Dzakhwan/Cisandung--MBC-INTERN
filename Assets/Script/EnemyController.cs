@@ -15,6 +15,17 @@ public class EnemyController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+         if (!agent.isOnNavMesh)
+    {
+        if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 2.0f, NavMesh.AllAreas))
+        {
+            agent.Warp(hit.position); 
+        }
+        else
+        {
+            Debug.LogError($"{name} tidak berada di area NavMesh!");
+        }
+    }
     }
 
     void Update()
