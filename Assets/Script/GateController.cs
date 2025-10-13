@@ -25,7 +25,7 @@ public class GateController : MonoBehaviour, IInteractable
         // Misal: nonaktifkan pintu, mainkan animasi, dsb
         anim.SetTrigger("Open");
         // Atau nonaktifkan collider pintu agar pemain bisa melewatinya
-        GetComponent<Collider>().enabled = false;
+        GetComponents<Collider>()[1].enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
