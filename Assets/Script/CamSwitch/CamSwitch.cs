@@ -1,11 +1,13 @@
 using UnityEngine;
 using Unity.Cinemachine;
 using UnityEditor;
+using System.Collections;
 
 public class CamSwitch : MonoBehaviour
 {
     public CinemachineCamera PrimaryVcam;
     public CinemachineCamera[] vcams;
+    public PlayerController player;
     public string tag;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +26,12 @@ public class CamSwitch : MonoBehaviour
             {
                 SwitchCam(targetVcam);
                 Debug.Log("Switching to " + targetVcam.name);
+            }
+            if (vcams[1].enabled == true)
+            {
+                
+                StartCoroutine(DisableMovementForSeconds(2f));
+
             }
         }
        
@@ -50,6 +58,13 @@ public class CamSwitch : MonoBehaviour
     private void GetVcams()
     {
         vcams = GameObject.FindObjectsOfType<CinemachineCamera>();
+    }
+
+    IEnumerator DisableMovementForSeconds(float seconds)
+    {
+        player.canMove = false;
+        yield return new WaitForSeconds(seconds);
+        player.canMove = true;
     }
 
     

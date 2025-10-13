@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float sprintSpeed = 10f;
     public float jumpForce = 5f;
     public bool IsGrounded = false;
+    public bool canMove = true;
     private AudioManager audioManager;
     private Vector2 moveInput;
     private Rigidbody rb;
@@ -124,6 +125,8 @@ public void OnInteract()
 
     void FixedUpdate()
     {
+       if (!canMove) return; 
+
         Vector3 moveDirection = new Vector3(moveInput.x, 0, moveInput.y);
         rb.MovePosition(rb.position + moveDirection * currentSpeed * Time.fixedDeltaTime);
         if (moveDirection != Vector3.zero)
