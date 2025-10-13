@@ -525,6 +525,17 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6914351 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1381546542846562033, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
+  m_PrefabInstance: {fileID: 2071139531}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6914337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405b0d0169501164c92105f065b35311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &10875531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2266,6 +2277,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74808693}
   m_Mesh: {fileID: 8385836491182413749, guid: 92c146ea2becfe249b95b1bce48eef1e, type: 3}
+--- !u!1 &80502606
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 80502607}
+  - component: {fileID: 80502608}
+  m_Layer: 0
+  m_Name: Vcam2
+  m_TagString: vcam
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &80502607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80502606}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 774.92, y: -1.8138994, z: 95.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1917962273}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &80502608
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 80502606}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 183.9, y: 1, z: 1}
+  m_Center: {x: 0.06, y: -1.55, z: 24.1}
 --- !u!1 &85375071
 GameObject:
   m_ObjectHideFlags: 0
@@ -32726,7 +32791,7 @@ Transform:
   m_GameObject: {fileID: 1359262548}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15184762, y: -0.010820056, z: 0.0016623776, w: 0.9883433}
-  m_LocalPosition: {x: 540.92, y: 10.35, z: 18.75}
+  m_LocalPosition: {x: 718.97, y: 10.35, z: 18.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45713,6 +45778,99 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1910679747}
   m_Mesh: {fileID: 8552134717624371188, guid: 92c146ea2becfe249b95b1bce48eef1e, type: 3}
+--- !u!1 &1917962272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917962273}
+  - component: {fileID: 1917962274}
+  - component: {fileID: 1917962275}
+  m_Layer: 0
+  m_Name: Cult cam
+  m_TagString: vcam
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1917962273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917962272}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.38613212, y: 0.61842185, z: -0.35633948, w: -0.58436173}
+  m_LocalPosition: {x: 11.46991, y: 1.27, z: 63.614517}
+  m_LocalScale: {x: 1.2970002, y: 1.2970002, z: 1.2970002}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 80502607}
+  m_LocalEulerAnglesHint: {x: 63.128, y: -98.023, z: -7.772}
+--- !u!114 &1917962274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917962272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Priority:
+    Enabled: 0
+    m_Value: 0
+  OutputChannel: 1
+  StandbyUpdate: 2
+  m_StreamingVersion: 20241001
+  m_LegacyPriority: 0
+  Target:
+    TrackingTarget: {fileID: 0}
+    LookAtTarget: {fileID: 0}
+    CustomLookAtTarget: 0
+  Lens:
+    FieldOfView: 60.000004
+    OrthographicSize: 5
+    NearClipPlane: 0.3
+    FarClipPlane: 1000
+    Dutch: 0
+    ModeOverride: 0
+    PhysicalProperties:
+      GateFit: 2
+      SensorSize: {x: 21.946, y: 16.002}
+      LensShift: {x: 0, y: 0}
+      FocusDistance: 10
+      Iso: 200
+      ShutterSpeed: 0.005
+      Aperture: 16
+      BladeCount: 5
+      Curvature: {x: 2, y: 11}
+      BarrelClipping: 0.25
+      Anamorphism: 0
+  BlendHint: 0
+--- !u!114 &1917962275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917962272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449ef5ebbe24720439ec31d15f7b6f3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weight: 1
+  FocusTracking: 0
+  FocusTarget: {fileID: 0}
+  FocusOffset: 0
+  Profile: {fileID: 0}
 --- !u!1 &1929833958
 GameObject:
   m_ObjectHideFlags: 0
@@ -48595,7 +48753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3421532641429452755, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 540.68
+      value: 718.73
       objectReference: {fileID: 0}
     - target: {fileID: 3421532641429452755, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -48658,12 +48816,16 @@ PrefabInstance:
       value: vcam
       objectReference: {fileID: 0}
     - target: {fileID: 8472506841171622517, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 6914351}
+    - target: {fileID: 8472506841171622517, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: PrimaryVcam
       value: 
       objectReference: {fileID: 1873758440}
     - target: {fileID: 8472506841171622517, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: vcams.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8472506841171622517, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: 'vcams.Array.data[0]'
@@ -48672,7 +48834,7 @@ PrefabInstance:
     - target: {fileID: 8472506841171622517, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: 'vcams.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1917962274}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51078,3 +51240,4 @@ SceneRoots:
   - {fileID: 1600680974}
   - {fileID: 863602619}
   - {fileID: 300685834}
+  - {fileID: 80502607}
