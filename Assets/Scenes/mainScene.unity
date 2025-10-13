@@ -5115,13 +5115,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgroundMusic: {fileID: 1203295661}
   SFXMusic: {fileID: 905465414}
-  background: {fileID: 8300000, guid: 2f08406ca792b5546baedfeedbbf0a9f, type: 3}
+  background: {fileID: 8300000, guid: 1ccbbc7ff3a74624fbf188085dbeacd3, type: 3}
   buttonClick: {fileID: 8300000, guid: 2614ed2e3d2853d498d518f6e9636880, type: 3}
   footstepSounds:
-  - {fileID: 8300000, guid: de7d57f1bdc66b84fa1e5cbce93b5614, type: 3}
-  - {fileID: 8300000, guid: b7d93fef0ef5f644090de9780264f6f6, type: 3}
+  - {fileID: 8300000, guid: 2c8c97ee9010a8e49984f2c367ac0f49, type: 3}
+  - {fileID: 8300000, guid: 52824955179b5394c80fca08c53822a3, type: 3}
+  - {fileID: 8300000, guid: fd01c99dbcb405f4897f320ab943f656, type: 3}
+  - {fileID: 8300000, guid: 54b7ebcfcd25aca44abd54ccd899eb7b, type: 3}
   jumpSound: {fileID: 0}
-  landSound: {fileID: 8300000, guid: c94f8677e63f62e4c91ea419b818af5f, type: 3}
+  landSound: {fileID: 8300000, guid: b4751629968f1434e8a9c787b8d35cc7, type: 3}
   footstepVolume: 0.5
   pitchVariation: 0.1
 --- !u!4 &2020870038
