@@ -1,16 +1,16 @@
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
- 
+
 [CustomEditor(typeof(GrassPainter))]
 [InitializeOnLoad]
 public class GrassPainterEditor : Editor
 {
     GrassPainter grassPainter;
     readonly string[] toolbarStrings = { "Add", "Remove", "Edit", "Reproject" };
- 
+
     readonly string[] toolbarStringsEdit = { "Edit Colors", "Edit Length/Width", "Both" };
- 
+
     private void OnEnable()
     {
         grassPainter = (GrassPainter)target;
@@ -22,7 +22,7 @@ public class GrassPainterEditor : Editor
         Handles.DrawWireDisc(grassPainter.hitPosGizmo, grassPainter.hitNormal, grassPainter.brushSize);
         Handles.color = new Color(0, 0.5f, 0, 0.4f);
         Handles.DrawSolidDisc(grassPainter.hitPosGizmo, grassPainter.hitNormal, grassPainter.brushSize);
- 
+
         if (grassPainter.toolbarInt == 1)
         {
             Handles.color = Color.red;
@@ -50,7 +50,7 @@ public class GrassPainterEditor : Editor
             Handles.DrawSolidDisc(grassPainter.hitPosGizmo, grassPainter.hitNormal, grassPainter.brushSize);
         }
     }
- 
+
     public override void OnInspectorGUI()
     {
         EditorGUILayout.LabelField("Grass Limit", EditorStyles.boldLabel);
@@ -70,13 +70,13 @@ public class GrassPainterEditor : Editor
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("Brush Settings", EditorStyles.boldLabel);
         grassPainter.brushSize = EditorGUILayout.Slider("Brush Size", grassPainter.brushSize, 0.1f, 10f);
- 
+
         if (grassPainter.toolbarInt == 0)
         {
             grassPainter.normalLimit = EditorGUILayout.Slider("Normal Limit", grassPainter.normalLimit, 0f, 1f);
             grassPainter.density = EditorGUILayout.Slider("Density", grassPainter.density, 0.1f, 10f);
         }
- 
+
         if (grassPainter.toolbarInt == 2)
         {
             grassPainter.toolbarIntEdit = GUILayout.Toolbar(grassPainter.toolbarIntEdit, toolbarStringsEdit);
@@ -96,7 +96,7 @@ public class GrassPainterEditor : Editor
             grassPainter.brushFalloffSize = EditorGUILayout.Slider("Brush Falloff Size", grassPainter.brushFalloffSize, 0.01f, 1f);
             grassPainter.Flow = EditorGUILayout.Slider("Brush Flow", grassPainter.Flow, 0.1f, 10f);
         }
- 
+
         if (grassPainter.toolbarInt == 0 || grassPainter.toolbarInt == 2)
         {
             EditorGUILayout.Space();
@@ -111,13 +111,13 @@ public class GrassPainterEditor : Editor
             grassPainter.rangeG = EditorGUILayout.Slider("Green", grassPainter.rangeG, 0f, 1f);
             grassPainter.rangeB = EditorGUILayout.Slider("Blue", grassPainter.rangeB, 0f, 1f);
         }
- 
+
         if (grassPainter.toolbarInt == 3)
         {
             EditorGUILayout.Space();
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField("Reprojection Y Offset", EditorStyles.boldLabel);
- 
+
             grassPainter.reprojectOffset = EditorGUILayout.FloatField(grassPainter.reprojectOffset);
             EditorGUILayout.EndHorizontal();
         }
@@ -132,10 +132,10 @@ public class GrassPainterEditor : Editor
                 grassPainter.ClearMesh();
             }
         }
- 
- 
- 
- 
+
+
+
+
     }
- 
+
 }
