@@ -6121,7 +6121,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4739952490480864496, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
   m_PrefabInstance: {fileID: 2071139531}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &278166152
+--- !u!114 &278166154
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6130,13 +6130,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 278166150}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 405b0d0169501164c92105f065b35311, type: 3}
+  m_Script: {fileID: 11500000, guid: f70ba61ddc7ba5e448931d3836bb5cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  sprintSpeed: 10
-  jumpForce: 5
-  IsGrounded: 0
 --- !u!1 &285273285
 GameObject:
   m_ObjectHideFlags: 0
@@ -47680,7 +47676,7 @@ PrefabInstance:
       addedObject: {fileID: 6914347}
     - targetCorrespondingSourceObject: {fileID: 4739952490480864496, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 278166152}
+      addedObject: {fileID: 278166154}
   m_SourcePrefab: {fileID: 100100000, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
 --- !u!1 &2074875148
 GameObject:

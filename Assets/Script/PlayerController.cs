@@ -120,13 +120,7 @@ public void OnInteract()
         }
     }
 
-    public void PlayFootstep()
-    {
-        if (audioManager != null )
-        {
-            audioManager.PlayFootstep();
-        }
-    }
+    
 
     void FixedUpdate()
     {
