@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -80,14 +81,24 @@ private void OnTriggerEnter(Collider other)
     {
         interactableInRange = interactable;
     }
+        if (other.CompareTag("Obstacle"))
+        {
+            Die();
+        }
+    if(other.CompareTag("Checkpoint"))
+    {
+        Vector3 checkpointPosition = other.transform.position;
+        UpdateCheckpoint(checkpointPosition);
+        Debug.Log("Checkpoint reached at: " + checkpointPosition);
+    }
 }
 
 private void OnTriggerExit(Collider other)
 {
-    if (other.TryGetComponent<IInteractable>(out var interactable) && interactable == interactableInRange)
-    {
-        interactableInRange = null;
-    }
+        if (other.TryGetComponent<IInteractable>(out var interactable) && interactable == interactableInRange)
+        {
+            interactableInRange = null;
+        }
 }
 
 public void OnInteract()
@@ -132,4 +143,28 @@ public void OnInteract()
             anim.SetBool("IsWalking", false);
         }
     }
+    Vector3 CheckpointPost;
+    private void Start()
+    {
+        CheckpointPost = transform.position;
+    }
+
+    void Die()
+    {
+        Debug.Log("Player Died");
+        StartCoroutine(Respawn(0.5f));
+    }
+    public void UpdateCheckpoint(Vector3 newCheckpoint)
+    {
+        CheckpointPost = newCheckpoint;
+        Debug.Log("Checkpoint Updated");
+    }
+    IEnumerator Respawn(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        transform.position = CheckpointPost;
+        rb.linearVelocity = Vector3.zero;
+        Debug.Log("Player Respawned");
+    }
+
 }
