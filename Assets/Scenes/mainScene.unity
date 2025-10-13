@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalRunes: 3
+  collectedRunes: 0
 --- !u!65 &115724693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -552,7 +553,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4739952490480864496, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
   m_PrefabInstance: {fileID: 1028804790886663709}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &148018849
+--- !u!114 &148018852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -561,13 +562,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 148018846}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 405b0d0169501164c92105f065b35311, type: 3}
+  m_Script: {fileID: 11500000, guid: f70ba61ddc7ba5e448931d3836bb5cf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  sprintSpeed: 10
-  jumpForce: 5
-  IsGrounded: 0
 --- !u!4 &178176551 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 885e6bc438981e64398c511c217f4077, type: 3}
@@ -1097,7 +1094,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.15184762, y: -0.010820056, z: 0.0016623776, w: 0.9883433}
-  m_LocalPosition: {x: 63.600002, y: 4.626, z: -10.96}
+  m_LocalPosition: {x: 268.59998, y: 4.626, z: -10.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2841,7 +2838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionPrompt: Press 'E' to collect the rune
-  gateController: {fileID: 115724692}
+  gateController: {fileID: 944984988}
 --- !u!136 &802612465
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3152,6 +3149,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2020870038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944984988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4206276440000397127, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+  m_PrefabInstance: {fileID: 4490526810383200187}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b41fb716a9a80074b9f17e4c6a3e0765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &979172006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3738,7 +3746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionPrompt: Press 'E' to collect the rune
-  gateController: {fileID: 115724692}
+  gateController: {fileID: 944984988}
 --- !u!65 &1372016771
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4028,7 +4036,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionPrompt: Press 'E' to collect the rune
-  gateController: {fileID: 115724692}
+  gateController: {fileID: 944984988}
 --- !u!65 &1441465870
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6175,7 +6183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3421532641429452755, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.36
+      value: 268.36
       objectReference: {fileID: 0}
     - target: {fileID: 3421532641429452755, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6439,8 +6447,65 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4739952490480864496, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 148018849}
+      addedObject: {fileID: 148018852}
   m_SourcePrefab: {fileID: 100100000, guid: 2016d1189e4e39b48aedc940763c85e0, type: 3}
+--- !u!1001 &4490526810383200187
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6265173217703341005, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_Name
+      value: gerbang
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 277.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.217
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6753584647651717495, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 730cc93f1bb82e34aacd837b81b09b6a, type: 3}
 --- !u!1001 &5204235999156728154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6577,3 +6642,4 @@ SceneRoots:
   - {fileID: 2132002093}
   - {fileID: 1168639374}
   - {fileID: 8348794654871651286}
+  - {fileID: 4490526810383200187}

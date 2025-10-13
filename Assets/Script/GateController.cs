@@ -3,7 +3,13 @@ using UnityEngine;
 public class GateController : MonoBehaviour, IInteractable
 {
     public int totalRunes = 3; // Jumlah rune yang harus dikumpulkan
-    private int collectedRunes = 0;
+    public int collectedRunes = 0;
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
 
     public void AddRune()
     {
@@ -17,7 +23,9 @@ public class GateController : MonoBehaviour, IInteractable
     {
         Debug.Log("Gate opened!");
         // Misal: nonaktifkan pintu, mainkan animasi, dsb
-        gameObject.SetActive(false);
+        anim.SetTrigger("Open");
+        // Atau nonaktifkan collider pintu agar pemain bisa melewatinya
+        GetComponents<Collider>()[1].enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,9 +40,11 @@ public class GateController : MonoBehaviour, IInteractable
     public void OnInteract()
     {
         Debug.Log("Interacted with the gate.");
-        if (collectedRunes >= totalRunes)
+        Debug.Log(collectedRunes + " out of " + totalRunes + " runes collected.");
+        if (collectedRunes == totalRunes)
         {
             OpenGate();
+            
         }
         else
         {
