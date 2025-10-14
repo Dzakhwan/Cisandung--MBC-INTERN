@@ -42,7 +42,7 @@ public class MainMenuLogic : MonoBehaviour
         loading.GetComponent<Canvas>().enabled = true;
         mainMenu.GetComponent<Canvas>().enabled = false;
         audioManager.PlaySFX(audioManager.buttonClick);
-        SceneManager.LoadScene("mainScene");
+        SceneManager.LoadScene("New Scene");
     }
 
     // Method to handle options button click
