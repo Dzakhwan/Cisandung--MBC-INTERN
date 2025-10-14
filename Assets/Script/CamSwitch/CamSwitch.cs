@@ -8,6 +8,8 @@ public class CamSwitch : MonoBehaviour
     public CinemachineCamera PrimaryVcam;
     public CinemachineCamera[] vcams;
     public PlayerController player;
+    public CultController[] cults;
+    public GameObject ColliderVcam2;
     public string tag;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,8 +31,9 @@ public class CamSwitch : MonoBehaviour
             }
             if (vcams[1].enabled == true)
             {
-                
-                StartCoroutine(DisableMovementForSeconds(2f));
+
+                StartCoroutine(DisableMovementForSeconds(3f));
+                StartCoroutine(DisableCultMovementForSeconds(3f));
 
             }
         }
@@ -65,6 +68,19 @@ public class CamSwitch : MonoBehaviour
         player.canMove = false;
         yield return new WaitForSeconds(seconds);
         player.canMove = true;
+        ColliderVcam2.SetActive(false);
+    
+        
+        
+    }
+    IEnumerator DisableCultMovementForSeconds(float seconds)
+    {
+      yield return new WaitForSeconds(seconds);
+    foreach (var cult in cults)
+    {
+        if (cult != null)
+            cult.enabled = true;
+    }
     }
 
     
