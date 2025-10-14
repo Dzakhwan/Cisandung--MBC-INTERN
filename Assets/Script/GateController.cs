@@ -15,8 +15,10 @@ public class GateController : MonoBehaviour, IInteractable
     {
         collectedRunes++;
         Debug.Log("Rune collected: " + collectedRunes + "/" + totalRunes);
-
-
+        if (collectedRunes >= totalRunes)
+        {
+             ObjectiveManager.instance.CompleteObjective();
+        }
     }
 
     private void OpenGate()
