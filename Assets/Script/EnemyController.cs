@@ -9,23 +9,24 @@ public class EnemyController : MonoBehaviour
     public float chaseDistance = 10f;
 
     private bool isChasing = false;
-
+    Vector3 StartPosition;
     void Start()
     {
+        StartPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-         if (!agent.isOnNavMesh)
-    {
-        if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 2.0f, NavMesh.AllAreas))
+        if (!agent.isOnNavMesh)
         {
-            agent.Warp(hit.position); 
+            if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 2.0f, NavMesh.AllAreas))
+            {
+                agent.Warp(hit.position);
+            }
+            else
+            {
+                Debug.LogError($"{name} tidak berada di area NavMesh!");
+            }
         }
-        else
-        {
-            Debug.LogError($"{name} tidak berada di area NavMesh!");
-        }
-    }
     }
 
     void Update()
@@ -54,5 +55,23 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Die();
+        }
+    }
+    
+    void Die()
+    {
+        Debug.Log("Player Died");
+        Respawn();
+    }
+    void Respawn()
+    {
+       transform.position = StartPosition;
     }
 }

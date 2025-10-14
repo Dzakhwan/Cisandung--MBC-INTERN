@@ -9,9 +9,10 @@ public class CultController : MonoBehaviour
     public float chaseDistance = 10f;
 
     private bool isChasing = false;
-
+    Vector3 StartPosition;
     void Start()
     {
+        StartPosition = transform.position;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponentInChildren<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -20,7 +21,7 @@ public class CultController : MonoBehaviour
 
     void Update()
     {
-        if (agent != null &&  player != null)
+        if (agent != null && player != null)
         {
             float distance = Vector3.Distance(transform.position, player.position);
 
@@ -44,5 +45,22 @@ public class CultController : MonoBehaviour
                 }
             }
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Die();
+        }
+    }
+    
+    void Die()
+    {
+        Debug.Log("Player Died");
+        Respawn();
+    }
+    void Respawn()
+    {
+       transform.position = StartPosition;
     }
 }
