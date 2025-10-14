@@ -348263,7 +348263,7 @@ MonoBehaviour:
     normal: {x: 0, y: 1, z: 2.220446e-17}
     length: {x: 0.25, y: 0.25}
     color: {x: 0.34509805, y: 0.34509805, z: 0.34509805}
-  m_InstantiatedMaterial: {fileID: 1412295916}
+  m_InstantiatedMaterial: {fileID: 1242268114}
 --- !u!4 &23710925
 Transform:
   m_ObjectHideFlags: 0
@@ -389671,6 +389671,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8c98d2d0a0e4c45409eb2a7900a5e561, type: 3}
   m_PrefabInstance: {fileID: 1237733556}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1242268114
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_ShaderGraph GrassUnlitBasic(Clone)
+  m_Shader: {fileID: -6465566751694194690, guid: c0de59b2b82e1c141a6ab9b4c2ffb226, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blend: 0
+    - _BlendMult: 1
+    - _BlendOff: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1247349901
 GameObject:
   m_ObjectHideFlags: 0
@@ -395341,52 +395387,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2947a6f08f118f54fbada833a1f8fc13, type: 3}
   m_PrefabInstance: {fileID: 932783112}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1412295916
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_ShaderGraph GrassUnlitBasic(Clone)
-  m_Shader: {fileID: -6465566751694194690, guid: c0de59b2b82e1c141a6ab9b4c2ffb226, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Blend: 0
-    - _BlendMult: 1
-    - _BlendOff: 0
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1412500472
 GameObject:
   m_ObjectHideFlags: 0
@@ -401886,6 +401886,7 @@ MonoBehaviour:
   SFXMusic: {fileID: 1603044365}
   ambientSFX: {fileID: 1968290765}
   background: {fileID: 8300000, guid: 1ccbbc7ff3a74624fbf188085dbeacd3, type: 3}
+  intenseBackground: {fileID: 8300000, guid: 1529f63d9d7ed10439545d1d71d612a1, type: 3}
   buttonClick: {fileID: 8300000, guid: 2614ed2e3d2853d498d518f6e9636880, type: 3}
   footstepSounds:
   - {fileID: 8300000, guid: 2c8c97ee9010a8e49984f2c367ac0f49, type: 3}
@@ -401896,6 +401897,12 @@ MonoBehaviour:
   landSound: {fileID: 0}
   deathSound: {fileID: 8300000, guid: cce1d91d53c47914fb99e230c09c5458, type: 3}
   dogBarkingLoop: {fileID: 8300000, guid: 39e445fa5939ff343936e71a852d305c, type: 3}
+  randomAmbientClips:
+  - {fileID: 8300000, guid: c1d23d34d61360a4ab2b846535bfc5e8, type: 3}
+  - {fileID: 8300000, guid: d05314a71ed1e8549828e55184c7b3b7, type: 3}
+  - {fileID: 8300000, guid: ab5138c8a0b0d2747a231c98d32e197b, type: 3}
+  minTimeBetweenAmbient: 5
+  maxTimeBetweenAmbient: 15
   footstepVolume: 0.5
   pitchVariation: 0.1
 --- !u!4 &1600680974
