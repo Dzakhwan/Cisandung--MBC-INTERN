@@ -348263,7 +348263,7 @@ MonoBehaviour:
     normal: {x: 0, y: 1, z: 2.220446e-17}
     length: {x: 0.25, y: 0.25}
     color: {x: 0.34509805, y: 0.34509805, z: 0.34509805}
-  m_InstantiatedMaterial: {fileID: 1578162615}
+  m_InstantiatedMaterial: {fileID: 2092211123}
 --- !u!4 &23710925
 Transform:
   m_ObjectHideFlags: 0
@@ -371046,6 +371046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveMessage: Dekati para kultus
+  requiredAmount: 1
 --- !u!65 &692407104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -379383,7 +379384,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b37dfbffeffa8439f335f8d1e7a204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectiveMessage: Carilah 3 Rune
+  objectiveMessage: Dekati Gerbang
+  requiredAmount: 1
 --- !u!65 &958443848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -384745,6 +384747,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectiveText: {fileID: 184499147}
   completeMessageDuration: 1
+  completeSound: {fileID: 0}
 --- !u!4 &1084664105
 Transform:
   m_ObjectHideFlags: 0
@@ -385023,6 +385026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectiveMessage: Lari dari kejaran anjing
+  requiredAmount: 1
 --- !u!65 &1096362544
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -402306,52 +402310,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577287316}
   m_Mesh: {fileID: 8552134717624371188, guid: 92c146ea2becfe249b95b1bce48eef1e, type: 3}
---- !u!21 &1578162615
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_ShaderGraph GrassUnlitBasic(Clone)
-  m_Shader: {fileID: -6465566751694194690, guid: c0de59b2b82e1c141a6ab9b4c2ffb226, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses:
-  - MOTIONVECTORS
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - unity_Lightmaps:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_LightmapsInd:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - unity_ShadowMasks:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Blend: 0
-    - _BlendMult: 1
-    - _BlendOff: 0
-    - _QueueControl: 0
-    - _QueueOffset: 0
-    m_Colors: []
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1578640456
 GameObject:
   m_ObjectHideFlags: 0
@@ -420373,6 +420331,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ab50871c9debff441ae673473e00701f, type: 3}
   m_PrefabInstance: {fileID: 2085320886}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &2092211123
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Shader Graphs_ShaderGraph GrassUnlitBasic(Clone)
+  m_Shader: {fileID: -6465566751694194690, guid: c0de59b2b82e1c141a6ab9b4c2ffb226, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blend: 0
+    - _BlendMult: 1
+    - _BlendOff: 0
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    m_Colors: []
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &2092249600
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ public class GateController : MonoBehaviour, IInteractable
     public int totalRunes = 3; // Jumlah rune yang harus dikumpulkan
     public int collectedRunes = 0;
     private Animator anim;
+    private bool objectiveStarted = false;
 
     private void Start()
     {
@@ -15,12 +16,15 @@ public class GateController : MonoBehaviour, IInteractable
     {
         collectedRunes++;
         Debug.Log("Rune collected: " + collectedRunes + "/" + totalRunes);
-        if (collectedRunes >= totalRunes)
+        if (objectiveStarted)
         {
-             ObjectiveManager.instance.CompleteObjective();
+            // Cukup kirim jumlah saat ini
+            ObjectiveManager.instance.UpdateObjectiveProgress(collectedRunes);
         }
-    }
 
+        // Pengecekan penyelesaian objektif sekarang ditangani oleh ObjectiveManager,
+        // jadi baris CompleteObjective() di sini bisa dihapus untuk menghindari panggilan ganda.
+    }
     private void OpenGate()
     {
         Debug.Log("Gate opened!");
@@ -32,9 +36,13 @@ public class GateController : MonoBehaviour, IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !objectiveStarted)
         {
-            Debug.Log("Player is near the gate. Press 'E' to interact.");
+            objectiveStarted = true;
+            // Membuat objektif baru menggunakan class Objective
+            string message = "Kumpulkan Rune untuk membuka gerbang";
+            Objective newObjective = new Objective(message, collectedRunes, totalRunes);
+            ObjectiveManager.instance.SetObjective(newObjective);
         }
     }
 
@@ -51,6 +59,7 @@ public class GateController : MonoBehaviour, IInteractable
         else
         {
             Debug.Log("You need more runes to open the gate.");
+            TutorialManager.instance.ShowObjective("You need more runes to open the gate.",1);
         }
     }
     public void OnInteractExit()
