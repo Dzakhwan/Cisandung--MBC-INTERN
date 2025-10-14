@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b7ae44bda0b2db479b1bdacf429abaa, type: 3}
+  m_Script: {fileID: 11500000, guid: 01fffbf0410a4e04d868e6e1789993e5, type: 3}
   m_Name: Grass Settings
   m_EditorClassIdentifier: 
   shaderToUse: {fileID: 7200000, guid: 3082c0617ca01eb49a3c772e0bf69739, type: 3}
@@ -24,13 +24,13 @@ MonoBehaviour:
   MinHeight: 0.01
   MaxWidth: 1
   MaxHeight: 1
-  windSpeed: 10
+  windSpeed: 2
   windStrength: 0.05
   allowedBladesPerVertex: 4
   allowedSegmentsPerBlade: 4
   affectStrength: 1
-  topTint: {r: 1, g: 1, b: 1, a: 1}
-  bottomTint: {r: 0, g: 0, b: 1, a: 1}
+  topTint: {r: 0.9960785, g: 0.9960785, b: 0.9960785, a: 1}
+  bottomTint: {r: 0.34509805, g: 0.3254902, b: 0.3254902, a: 1}
   drawBounds: 0
   minFadeDistance: 40
   maxDrawDistance: 125
