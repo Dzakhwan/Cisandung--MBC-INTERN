@@ -27,7 +27,7 @@ public class GateController : MonoBehaviour, IInteractable
     }
     private void OpenGate()
     {
-        Debug.Log("Gate opened!");
+        Debug.Log("Gate Terbuka!");
         // Misal: nonaktifkan pintu, mainkan animasi, dsb
         anim.SetTrigger("Open");
         // Atau nonaktifkan collider pintu agar pemain bisa melewatinya
