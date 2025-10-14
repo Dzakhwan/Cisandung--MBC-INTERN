@@ -82,15 +82,41 @@ private void OnTriggerEnter(Collider other)
     {
         interactableInRange = interactable;
     }
-        if (other.CompareTag("Obstacle"))
-        {
+    if (other.CompareTag("Obstacle"))
+    {
             Die();
+            if (audioManager != null)
+            {
+                audioManager.PlayDeathSound();
+            }
+    }
+    if (other.CompareTag("CheckpointDog"))
+    {
+        Vector3 checkpointPosition = other.transform.position;
+        UpdateCheckpoint(checkpointPosition);
+        Debug.Log("Checkpoint Dog reached at: " + checkpointPosition);
+        if (audioManager != null)
+        {
+            audioManager.PlayDogBarking();
         }
-    if(other.CompareTag("Checkpoint"))
+    }
+    else if (other.CompareTag("Checkpoint"))
     {
         Vector3 checkpointPosition = other.transform.position;
         UpdateCheckpoint(checkpointPosition);
         Debug.Log("Checkpoint reached at: " + checkpointPosition);
+        if (audioManager != null)
+        {
+            audioManager.StopDogBarking();
+        }
+    }
+    if (other.gameObject.name == "Vcam2")
+    {
+        if (audioManager != null )
+            {
+                audioManager.ChangeBGM();
+                Debug.Log("BGM changed to VCam BGM.");
+            }
     }
 }
 
@@ -149,7 +175,7 @@ public void OnInteract()
     void Die()
     {
         Debug.Log("Player Died");
-        StartCoroutine(Respawn(0.5f));
+        StartCoroutine(Respawn(1.0f));
     }
     public void UpdateCheckpoint(Vector3 newCheckpoint)
     {

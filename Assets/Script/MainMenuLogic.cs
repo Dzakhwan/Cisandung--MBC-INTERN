@@ -23,7 +23,7 @@ public class MainMenuLogic : MonoBehaviour
         mainMenu = GameObject.Find("MainMenuCanvas");
         optionsMenu = GameObject.Find("OptionsCanvas");
         creditsMenu = GameObject.Find("CreditsCanvas");
-        loading = GameObject.Find("LoadingCanvas");
+        loading = GameObject.Find("TutorialCanvas");
 
         // Enable main menu canvas and disable others
         mainMenu.GetComponent<Canvas>().enabled = true;
@@ -42,7 +42,11 @@ public class MainMenuLogic : MonoBehaviour
         loading.GetComponent<Canvas>().enabled = true;
         mainMenu.GetComponent<Canvas>().enabled = false;
         audioManager.PlaySFX(audioManager.buttonClick);
-        SceneManager.LoadScene("New Scene");
+    }
+
+    public void LoadScene()
+    {
+       SceneManager.LoadScene("New Scene");
     }
 
     // Method to handle options button click
