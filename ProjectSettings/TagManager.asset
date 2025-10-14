@@ -9,6 +9,7 @@ TagManager:
   - vcam
   - Obstacle
   - Checkpoint
+  - CheckpointDog
   layers:
   - Default
   - TransparentFX
