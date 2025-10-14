@@ -28,7 +28,7 @@ MonoBehaviour:
   sizeLength: 0.5
   adjustWidth: 0
   adjustLength: 0
-  adjustWidthMax: 2
+  adjustWidthMax: 3
   adjustHeightMax: 2
   reprojectOffset: 1
   rangeR: 0
@@ -44,9 +44,9 @@ MonoBehaviour:
   paintMask:
     serializedVersion: 2
     m_Bits: 1
-  brushSize: 3
-  brushFalloffSize: 0.8
-  Flow: 0
+  brushSize: 7.8
+  brushFalloffSize: 0.471
+  Flow: 0.1
   density: 1
   normalLimit: 0.5
   grassAmountToGenerate: 100000
