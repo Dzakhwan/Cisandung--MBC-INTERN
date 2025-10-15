@@ -11,6 +11,7 @@ TagManager:
   - Checkpoint
   - CheckpointDog
   - vcam2
+  - Ending
   layers:
   - Default
   - TransparentFX
