@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private float currentSpeed;
     private IInteractable interactableInRange;
+    public GameManager GameManager;
 
     private void Awake()
     {
@@ -110,14 +111,19 @@ private void OnTriggerEnter(Collider other)
             audioManager.StopDogBarking();
         }
     }
-    if (other.gameObject.name == "Vcam2")
-    {
-        if (audioManager != null )
+        if (other.gameObject.name == "Vcam2")
+        {
+            if (audioManager != null)
             {
                 audioManager.ChangeBGM();
                 Debug.Log("BGM changed to VCam BGM.");
             }
-    }
+        }
+    if(other.CompareTag("Ending"))
+        {
+           GameManager.TriggerOutroCutscene();   
+        }
+    
 }
 
 private void OnTriggerExit(Collider other)
