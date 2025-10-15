@@ -181,7 +181,7 @@ public void OnInteract()
     void Die()
     {
         Debug.Log("Player Died");
-        StartCoroutine(Respawn(1.0f));
+        StartCoroutine(Respawn(0.5f));
     }
     public void UpdateCheckpoint(Vector3 newCheckpoint)
     {

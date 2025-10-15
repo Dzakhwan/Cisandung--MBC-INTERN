@@ -10,7 +10,7 @@ public class CamSwitch : MonoBehaviour
     public PlayerController player;
     public CultController[] cults;
     public GameObject ColliderVcam2;
-    public string tag;
+    public string tagline;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
    
@@ -21,7 +21,7 @@ public class CamSwitch : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(tag))
+        if (other.CompareTag(tagline))
         {
             CinemachineCamera targetVcam = other.GetComponentInChildren<CinemachineCamera>();
             if (targetVcam != null)
@@ -42,7 +42,7 @@ public class CamSwitch : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(tag))
+        if (other.CompareTag(tagline))
         {
             SwitchCam(PrimaryVcam);
         }
@@ -60,7 +60,8 @@ public class CamSwitch : MonoBehaviour
     [ContextMenu("Get Vcams")]
     private void GetVcams()
     {
-        vcams = GameObject.FindObjectsOfType<CinemachineCamera>();
+        vcams = Object.FindObjectsByType<CinemachineCamera>(FindObjectsSortMode.None);
+
     }
 
     IEnumerator DisableMovementForSeconds(float seconds)
