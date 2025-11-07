@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private float currentSpeed;
     private IInteractable interactableInRange;
+
     public GameManager GameManager;
 
     private void Awake()
@@ -37,7 +38,8 @@ public class PlayerController : MonoBehaviour
     public void OnJump()
     {
         Jump();
-        Debug.Log("Jump");
+        StartCoroutine(JumpDelay(0.2f));
+        Debug.Log("Jump delay started");
     }
 
     public void OnSprint(InputValue value)
@@ -67,14 +69,14 @@ public class PlayerController : MonoBehaviour
             audioManager.PlayLandSound();
         }
     }
-    void OnCollisionExit(Collision collision)
-    {
+    // void OnCollisionExit(Collision collision)
+    // {
 
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            IsGrounded = false;
-        }
-    }
+    //     if (collision.gameObject.CompareTag("Ground"))
+    //     {
+    //         IsGrounded = false;
+    //     }
+    // }
 
 
 private void OnTriggerEnter(Collider other)
@@ -194,6 +196,10 @@ public void OnInteract()
         transform.position = CheckpointPost;
         rb.linearVelocity = Vector3.zero;
         Debug.Log("Player Respawned");
+    }
+    IEnumerator JumpDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
     }
 
 }

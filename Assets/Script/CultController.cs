@@ -32,20 +32,9 @@ public class CultController : MonoBehaviour
             Debug.LogWarning("Player tidak ditemukan! Pastikan GameObject Player memiliki tag 'Player'");
         }
 
-        // Pastikan enemy ada di NavMesh
-        if (agent != null && !agent.isOnNavMesh)
-        {
-            if (NavMesh.SamplePosition(transform.position, out NavMeshHit hit, 2.0f, NavMesh.AllAreas))
-            {
-                agent.Warp(hit.position);
-            }
-            else
-            {
-                Debug.LogError($"{name} tidak berada di area NavMesh!");
-            }
-        }
+        
 
-        // Pastikan parameter agent tidak 0 agar tidak error di WebGL
+       
         if (agent != null)
         {
             if (agent.speed <= 0) agent.speed = 3.5f;
